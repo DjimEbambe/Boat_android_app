@@ -107,8 +107,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
-                android:padding="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="10dp">
 
 
                 <TextView
@@ -129,13 +129,34 @@
 
             </RelativeLayout>
 
-            <SeekBar
-                android:id="@+id/seekBar1"
-                android:layout_width="100dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:indeterminate="true"
-                android:max="100"
-                android:progress="0" />
+                android:layout_marginBottom="0dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="0dp">
+
+
+                <SeekBar
+                    android:id="@+id/battery"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:max="100"
+                    android:progress="43"
+                    android:progressDrawable="@drawable/bg_custom_seekbar_level"
+                    android:rotation="270" />
+
+                <TextView
+                    android:id="@+id/battery_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="63dp"
+                    android:text=" 43%" />
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 
@@ -150,32 +171,84 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="318dp"
             android:layout_height="240dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="3dp"
-            android:gravity="center">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/leftButton"
-                android:layout_width="100dp"
+
+            <LinearLayout
+                android:id="@+id/safran"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:srcCompat="@android:drawable/ic_media_previous" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
 
-            <ImageButton
-                android:id="@+id/rightButton"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_media_next" />
 
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/leftButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_media_previous" />
 
-        <LinearLayout
+                <ImageButton
+                    android:id="@+id/rightButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_media_next" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="229dp"
+                android:layout_height="59dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:gravity="center">
+
+
+                <ImageButton
+                    android:id="@+id/leftButtonAll"
+                    android:layout_width="157dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@android:drawable/ic_media_rew" />
+
+                <ImageButton
+                    android:id="@+id/rightButtonAll"
+                    android:layout_width="157dp"
+                    android:layout_height="40dp"
+
+                    app:srcCompat="@android:drawable/ic_media_ff" />
+
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="300dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="235dp"
             android:layout_height="216dp"
             android:layout_alignEnd="@id/seedControl"
@@ -188,46 +261,74 @@
 
 
             <AnalogClock
-
                 android:layout_width="120dp"
                 android:layout_height="110dp"
-                android:layout_marginBottom="-60dp" />
+                android:layout_marginHorizontal="53dp"
+                android:layout_marginTop="47dp"
 
-        </LinearLayout>
+                />
+
+            <Button
+                android:id="@+id/buttonIp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="192.168.0.177" />
 
 
-        <LinearLayout
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:id="@+id/seedControl"
-            android:layout_width="324dp"
-            android:layout_height="match_parent"
+            android:layout_width="318dp"
+            android:layout_height="240dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="-1dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="6dp"
             android:gravity="center"
-            android:paddingBottom="30dp">
+            android:paddingBottom="13dp">
+
+
+            <SeekBar
+                android:id="@+id/seek_speed"
+                android:layout_width="201dp"
+                android:layout_height="192dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:padding="0dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/bg_custom_seekbar"
+                android:rotation="270"
+                android:splitTrack="false"
+                android:thumb="@drawable/ic_thumb" />
+
+            <ProgressBar
+                android:id="@+id/loading_speed"
+                android:layout_width="219dp"
+                android:layout_height="103dp"
+                android:layout_marginTop="50dp"
+                android:indeterminate="true"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/set_speed"
                 android:layout_width="86dp"
                 android:layout_height="34dp"
-                android:text=""
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginBottom="70dp"
+                android:text="0"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
-            <SeekBar
-                android:id="@+id/seek_speed"
-                android:layout_width="220dp"
-                android:layout_height="100dp"
-                android:progress="30"
-                android:progressDrawable="@drawable/bg_custom_seekbar"
-                android:rotation="270"
-                android:splitTrack="false"
-                android:thumb="@drawable/ic_thumb"
-                tools:ignore="RtlSymmetry" />
 
-
-        </LinearLayout>
+        </RelativeLayout>
 
 
     </RelativeLayout>
