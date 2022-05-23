@@ -25,17 +25,18 @@ import kotlinx.coroutines.*
 class MainActivity : AppCompatActivity() {
 
     private val client = HttpClient(Android) {
+        /*
         engine {
-            // this: AndroidEngineConfig
             connectTimeout = 1000_000
             socketTimeout = 100_000
         }
+         */
     }
 
     // all variable
     private var speedSet =""
     var distance = 0
-    var ip = "192.168.0.177"
+    private var ip = "192.168.0.177"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,12 +72,12 @@ class MainActivity : AppCompatActivity() {
             while (isActive) {
                 buttonIp.setText(ip)
                 try {
-                    var str: String =gites()
+                    val str: String =gites()
 
-                    var parts = str.split("F")
-                    var gite1= (parts.elementAt(0)).toInt() - 1
-                    var cap1= (parts.elementAt(1)).toInt()
-                    var speed= (parts.elementAt(2)).toFloat() * 36
+                    val parts = str.split("F")
+                    val gite1= (parts.elementAt(0)).toInt() - 1
+                    val cap1= (parts.elementAt(1)).toInt()
+                    val speed= (parts.elementAt(2)).toFloat() * 36
                     //gite
                     giteLeft.text = gite1.toString()
                     gite.rotation = gite1.toFloat()

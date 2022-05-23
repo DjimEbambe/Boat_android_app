@@ -22,6 +22,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
+        /*signingConfigs {
+            releaseDebugKey {
+                // Use the debug signature
+                initWith debug
+            }
+        }
+
+         */
+
         // add the code from below line
         applicationVariants.all{
                 // this method is use to rename your all apk weather
